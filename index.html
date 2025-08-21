@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Posterizer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Posterize your PDF">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSit" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body style="margin: 1em;
+            font-family: FreeSans, Arimo, Helvetica, Arial, sans-serif;
+            text-size-adjust: 100%;
+            color: #111;
+            text-align: center;
+            background-color: #fff;
+            line-height: 150%;">
+
+  <!-- Add your site or application content here -->
+  <h1>Posterize a PDF</h1>
+  <p>Upload a PDF file to make a 2x2 A4 poster!</p>
+  <form action="posterize.php" method="POST" enctype="multipart/form-data">
+    <input type="file" accept=".pdf" name="if" size="60">
+    <input type="submit" value="Posterize it" style="width:220px;
+            height:40px;
+            text-align:center;
+            color:#FFF;
+            text-decoration:none;
+            line-height:43px;
+            font-family:'Oswald', Helvetica,sans-serif;
+            display: block;
+            margin: 1em auto;
+            text-shadow:-1px -1px 0 #2C7982;
+            border:1px solid #379AA4;
+            background: #3EACBA linear-gradient(to top, #48C6D4, #3EACBA);
+            border-radius:5px;
+            box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);">
+  </form>
+</body>
+</html>
