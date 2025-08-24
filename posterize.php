@@ -1,10 +1,14 @@
 <?php
-if ($_FILES["if"]["type"] != "application/pdf") {
-  exit("Sorry, only PDF files are allowed.");
-}
-if ($_FILES["if"]["size"] > 1024*1024*10) {
-  exit("Sorry, maximum allowed file size is 10MB.");
-}
+//var_dump($_FILES);
+//exit();
+$_FILES["if"]["type"]
+  or exit("No input file selected!");
+
+$_FILES["if"]["type"] == "application/pdf"
+  or exit("Sorry, only PDF files are allowed.");
+
+$_FILES["if"]["size"] <= 1024*1024*10
+  or exit("Sorry, maximum allowed file size is 10MB.");
 
 $tmpPoster = $_FILES["if"]["tmp_name"].'_poster';
 try {
