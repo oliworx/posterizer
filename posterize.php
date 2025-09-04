@@ -1,6 +1,5 @@
 <?php
-//var_dump($_FILES);
-//exit();
+
 $_FILES["if"]["type"]
   or exit("No input file selected!");
 

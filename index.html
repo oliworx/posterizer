@@ -13,35 +13,92 @@
   <meta name="apple-mobile-web-app-title" content="MyWebSit" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#fafafa">
+  <style>
+    html {
+      font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+      text-size-adjust: 100%
+    }
+    body {
+      margin: 1em;
+      color: #111;
+      background-color: #fff;
+      line-height: 150%;
+    }
+    header {
+      padding: 0 0 2em 0;
+    }
+    section, header, footer {
+      text-align: center;
+      clear: both;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    footer {
+      margin-top: 10em;
+      font-size: smaller;
+      border-top: 1px solid gray;
+    }
+    h1 {
+      font-weight: 300
+    }
+    .push_button {
+      width:220px;
+      height:40px;
+      text-align:center;
+      color:#FFF;
+      text-decoration:none;
+      line-height:43px;
+      font-family:'Oswald', Helvetica,sans-serif;
+      font-size: larger;
+      display: block;
+      margin: 1em auto;
+    }
+    .push_button:before {
+      background:#f0f0f0;
+      border-radius:5px;
+      box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
+      position: absolute;
+      content: "";
+      left: -6px; right: -6px;
+      top: -6px; bottom: -10px;
+      z-index: -1;
+    }
+    .push_button:active {
+      box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+      top:5px;
+    }
+    .push_button:active:before{
+      top: -11px;
+      bottom: -5px;
+      content: "";
+    }
+    .blue {
+      text-shadow:-1px -1px 0 #2C7982;
+      border:1px solid #379AA4;
+      background: #3EACBA linear-gradient(to top, #48C6D4, #3EACBA);
+      border-radius:5px;
+      box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
+    }
+    .blue:hover {
+      background: #48C6D4 linear-gradient(to top, #3EACBA, #48C6D4);
+    }
+  </style>
 </head>
 
-<body style="margin: 1em;
-            font-family: FreeSans, Arimo, Helvetica, Arial, sans-serif;
-            text-size-adjust: 100%;
-            color: #111;
-            text-align: center;
-            background-color: #fff;
-            line-height: 150%;">
-
-  <!-- Add your site or application content here -->
-  <h1>Posterize a PDF</h1>
-  <p>Upload a PDF file to make a 2x2 A4 poster!</p>
-  <form action="posterize.php" method="POST" enctype="multipart/form-data">
-    <input type="file" required accept=".pdf" name="if" size="60">
-    <input type="submit" value="Posterize it" style="width:220px;
-            height:40px;
-            text-align:center;
-            color:#FFF;
-            text-decoration:none;
-            line-height:43px;
-            font-family:'Oswald', Helvetica,sans-serif;
-            display: block;
-            margin: 1em auto;
-            text-shadow:-1px -1px 0 #2C7982;
-            border:1px solid #379AA4;
-            background: #3EACBA linear-gradient(to top, #48C6D4, #3EACBA);
-            border-radius:5px;
-            box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);">
-  </form>
+<body>
+  <header>
+    <h1>Posterize a PDF</h1>
+  </header>
+  <section>
+    Upload a PDF file to make a 2x2 A4 poster!
+    <form action="posterize.php" method="POST" enctype="multipart/form-data">
+      <input type="file" required accept=".pdf" name="if" size="60">
+      <input type="submit" class="push_button blue" value="Posterize it">
+    </form>
+  </section>
+  <footer>
+    © 2025 Oliver Kurmis &lt;oliver@kurmis.com&gt;
+    | <a href="https://github.com/oliworx/posterizer">clone on GitHub</a>
+  </footer>
 </body>
 </html>
