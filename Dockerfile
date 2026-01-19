@@ -1,4 +1,4 @@
-FROM php:8.3-cli-bookworm
+FROM php:8.4-cli-bookworm
 WORKDIR "/app"
 EXPOSE 8080
 RUN apt-get -y update && apt-get install -y --no-install-recommends pdfposter && rm -rf /var/lib/apt/lists/*
