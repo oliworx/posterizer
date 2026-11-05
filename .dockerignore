@@ -3,3 +3,4 @@
 .gitattributes
 .editorconfig
 Dockerfile
+tests
