@@ -38,6 +38,17 @@ Requirements: PHP 8.x and `pdfposter` on the `PATH`
 php -S localhost:8080
 ```
 
+## Tests
+
+```bash
+tests/run.sh
+```
+
+Builds the Docker image, starts a container and checks it over HTTP: PHP
+upload limits, poster output (4 A4 pages), error messages for missing,
+non-PDF and oversized files, and parallel request handling. Needs only
+`docker` and `curl`; set `PORT` if 18080 is taken.
+
 ## Project structure
 
 | File | Purpose |
@@ -45,6 +56,7 @@ php -S localhost:8080
 | `index.html` | Upload form (single page, inline CSS, no JavaScript) |
 | `posterize.php` | Validates the upload, runs `pdfposter`, returns the poster PDF |
 | `Dockerfile` | Container image for deployment |
+| `tests/run.sh` | Test suite against the Docker container |
 | `site.webmanifest`, `favicon*`, `*.png` | Icons and web app manifest |
 
 ## Limits
