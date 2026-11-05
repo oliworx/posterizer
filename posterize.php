@@ -1,6 +1,18 @@
 <?php
 
-$_FILES["if"]["type"]
+$tooLarge = "Sorry, maximum allowed file size is 10MB.";
+
+// post_max_size exceeded: PHP drops the whole request body, so $_FILES and $_POST are empty
+if (empty($_FILES) && empty($_POST) && (int)($_SERVER["CONTENT_LENGTH"] ?? 0) > 0) {
+  exit($tooLarge);
+}
+
+$error = $_FILES["if"]["error"] ?? UPLOAD_ERR_NO_FILE;
+
+in_array($error, [UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE], true)
+  and exit($tooLarge);
+
+$error === UPLOAD_ERR_OK
   or exit("No input file selected!");
 
 $_FILES["if"]["type"] == "application/pdf"
