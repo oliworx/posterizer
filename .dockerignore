@@ -6,3 +6,5 @@ Dockerfile
 tests
 README.md
 .dockerignore
+AGENTS.md
+CLAUDE.md
